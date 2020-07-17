@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Proycyo}
+\author{mawidicris }
+\date{March 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+\begin{center}
+\includegraphics[scale=0.090]{Escudo-UdeA.svg.png}
+\end{center}
+\vspace{50pt}
+\begin{center}
+\bf{\sc\Large 'Hilo en el contexto de los microprocesadores'}\\
+\end{center}
+\vspace{50pt}
+\begin{center}
+\begin{center}
+\bf{\sc\large Por:}\\
+\end{center}
+\bf{\sc\large Cristian Daniel Padrón Hernández}\\
+\end{center}
+\begin{center}
+
+\bf{\sc\large C.C: 1152717544}\\
+\end{center}
+\vspace{50pt}
+\begin{center}
+\bf{\sc\large Facultad de ingeniería}\\
+\end{center}
+\begin{center}
+\bf{\sc\large Medellín}
+\end{center}
+\begin{center}
+\bf{\sc\large 2020}\\
+\end{center}\
+
+
+
+
+
+\newpage
+\Large
+\section{¿Qué es una hilo en el contexto de los microprocesadores?}
+
+Tambien es conocido como hebra, proceso ligero o subproceso, es una secuencia de tareas pequeñas y ordenadas que pueden ser realizadas por el sistema operativo.
+
+Un hilo, en pocas palabras es una tarea que puede ser ejecutada al mismo tiempo que otra; Los distintos hilos de ejecución comparten una serie de recursos tales como el espacio de memoria, los archivos abiertos, situacion de autentificacion. Esta accion permite simplificar el diseño de una aplicacion que debe llevar a cabo distintas funciones simultaneamente.
+
+
+
+\section{¿Se puede hablar de la historia de los hilos?}
+No, porque los hilos es algo que viene integrado con la CPU desde sus origenes, es una unidad básica de utilización de CPU y por ende no hay una historia independiente a esta de la cual se puede hablar; Su proceso va de la mano con el de la computación en general.
+\section{¿Que tipo de hilos existen?}
+Existen dos tipos fundamentales:
+\newline
+\textbf{Hilos a nivel e usuario:} son implementados en alguna librería. Estos hilos se gestionan
+sin soporte del SO, el cual solo reconoce un hilo de ejecución.
+\newline
+\textbf{Hilos a nivel de kernel:} el SO es quien crea, planifica y gestiona los hilos. Se
+reconocen tantos hilos como se hayan creado.
+\newline
+Cada uno tiene sus ventajas, por ejemplo, Los hilos a nivel de usuario tienen como beneficio que, a diferencia de los hilos del kernel, su contexto es más sencillo. Mientras que Los hilos a nivel de kernel tienen como gran beneficio que tienen mejor tiempo de respuesta y aprovechan mejor la arquitectura de los microprocesadores.
+\section{¿Cómo se hace la implementación de interrupciones a nivel de hardware?}
+En muchos de los sistemas operativos que dan facilidades a los hilos, es más rápido cambiar de un hilo a otro dentro del mismo proceso, que cambiar de un proceso a otro. Este fenómeno se debe a que los hilos comparten datos y espacios de direcciones, mientras que los procesos, al ser independientes, no lo hacen.
+
+Los hilos presentan estados, los principales de ellos son: Ejecución, Listo y Bloqueado. No tiene sentido asociar estados de suspensión de hilos ya que es un concepto de proceso. En todo caso, si un proceso está expulsado de la memoria principal (ram), todos sus hilos deberán estarlo ya que todos comparten el espacio de direcciones del proceso.
+\section{¿Cómo se implementan los hilos por software?}
+Al igual que los procesos, los hilos poseen un estado de ejecución y pueden sincronizarse entre ellos para evitar problemas de compartimiento de recursos. Generalmente, cada hilo tiene una tarea específica y determinada, como forma de aumentar la eficiencia del uso del procesador.
+Algunos lenguajes de programación tienen características de diseño expresamente creadas para permitir a los programadores lidiar con hilos de ejecución (como Java o Delphi ). Otros (la mayoría) desconocen la existencia de hilos de ejecución y éstos deben ser creados mediante llamadas de biblioteca especiales que dependen del sistema operativo en el que estos lenguajes están siendo utilizados (como es el caso del Cy del C++ ).
+\newline
+Por potente que sea un lenguaje de programación, hay veces en las que hay que escribir una rutina usando el ensamblador o usando una llamada al sistema operativo. La forma de hacer ambas cosas varía algo según los compiladores
+
+
+
+
+\newpage
+
+\begin{thebibliography}{X}
+
+\bibitem{Baz}
+\textit{Gestión de hilos de ejecución}, Recuperado de: http://bibing.us.es/proyectos/abreproy/11320/fichero/Capitulos%252F13.pdf
+\bibitem{Baz}
+\textit{Interrumpir - Interrupt}, Recuperado de: https://es.qwe.wiki/wiki/Interrupt
+\bibitem{Baz}
+\textit{Núcleos e hilos de un procesador}, Recuperado de: https://jesgargardon.com/blog/nucleos-e-hilos-de-un-procesador/
+\bibitem{Baz}
+\textit{Hilo (informática)}, 
+Recuperado de: https://es.wikipedia.org/wiki/Hilo_(inform%C3%A1tica)
+
+
+
+\end{thebibliography}
+\end{document}
